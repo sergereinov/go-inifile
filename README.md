@@ -1,6 +1,10 @@
 # go-inifile
 Wrapper around `gopkg.in/ini.v1` to make it look more like `flag.String()` etc.
 
+## Install
+
+`go get github.com/sergereinov/go-inifile`
+
 ## Examples
 
 1. *examples/simple/main.go*
