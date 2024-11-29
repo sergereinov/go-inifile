@@ -5,6 +5,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"time"
 
 	"gopkg.in/ini.v1"
 )
@@ -84,6 +85,10 @@ func (f *iniFile) Int(section, key string, defaultVal int) int {
 
 func (f *iniFile) Bool(section, key string, defaultVal bool) bool {
 	return f.Section(section).Key(key).MustBool(defaultVal)
+}
+
+func (f *iniFile) Duration(section, key string, defaultVal time.Duration) time.Duration {
+	return f.Section(section).Key(key).MustDuration(defaultVal)
 }
 
 func (f *iniFile) Strings(section, key string, defaultVal []string, optDelim ...string) []string {
