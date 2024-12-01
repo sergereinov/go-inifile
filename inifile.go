@@ -41,7 +41,7 @@ func NewIniFile(optPath ...string) (*iniFile, error) {
 
 func buildIniPath(optPath ...string) string {
 	// Return absolute path if given
-	if len(optPath) > 0 {
+	if len(optPath) > 0 && len(optPath[0]) > 0 {
 		path := optPath[0]
 		if !filepath.IsAbs(path) {
 			execPath, _ := os.Executable()
